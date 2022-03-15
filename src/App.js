@@ -1,6 +1,8 @@
-import React from 'react';
+import React from 'react'
+// Layouts
+import MainLayout from './app/layouts/MainLayout'
 // Own
-import './App.css';
+import './App.css'
 
 /*
  * Компонент "ReactJS - Демо-приложение"
@@ -9,7 +11,7 @@ import './App.css';
 // Экспорт компонента
 export const App = () => {
     return (
-        <>ReactJS - Демо-приложение</>
+        <MainLayout />
     )
 }
 
