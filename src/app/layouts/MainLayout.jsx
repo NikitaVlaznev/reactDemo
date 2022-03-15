@@ -13,11 +13,19 @@ import ContentBlock from '../blocks/ContentBlock'
 const MainLayout = () => {
     return (
         <Grid container spacing={6}>
-            <Grid item xs={12} md={4}>
-                <LeftBlock />
+            <Grid item xs={12} md={2}>
+                <Grid container spacing={3}>
+                    <Grid item xs={12} sx={{ m: 2 }}>
+                        <LeftBlock />
+                    </Grid>
+                </Grid>
             </Grid>
-            <Grid item xs={12} md={8}>
-                <ContentBlock />
+            <Grid item xs={12} md={10}>
+                <Grid container spacing={3}>
+                    <Grid item xs={12} sx={{ m: 2 }}>
+                        <ContentBlock />
+                    </Grid>
+                </Grid>                        
             </Grid>
         </Grid>
     )
