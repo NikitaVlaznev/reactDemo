@@ -1,10 +1,15 @@
 import React from 'react'
 // Node
 import ReactDOM from 'react-dom'
+import { Provider } from "react-redux"
 import { BrowserRouter } from "react-router-dom"
 import { ThemeProvider, createTheme } from '@mui/material/styles'
+// Config
+import './config'
+// Redux
+import store from './redux/store'
 // Theme
-import theme from './theme';
+import theme from './theme'
 // Own
 import App from './App'
 import reportWebVitals from './reportWebVitals'
@@ -13,9 +18,11 @@ import './index.css'
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <ThemeProvider theme={createTheme(theme)}>
-                <App />
-            </ThemeProvider>            
+            <Provider store={store}>
+                <ThemeProvider theme={createTheme(theme)}>
+                    <App />
+                </ThemeProvider>
+            </Provider>
         </BrowserRouter>
     </React.StrictMode>,
     document.querySelector('#root')

@@ -2,8 +2,8 @@ import React from "react"
 // Node
 import { Grid } from '@mui/material'
 // Blocks
-import LeftBlock from '../blocks/LeftBlock'
-import ContentBlock from '../blocks/ContentBlock'
+import LeftBlock from '../../blocks/LeftBlock'
+import ContentBlock from '../../blocks/ContentBlock'
 
 /*
  * Шаблон "Главный"
