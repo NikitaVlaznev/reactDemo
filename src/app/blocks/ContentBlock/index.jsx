@@ -2,7 +2,7 @@ import React from 'react'
 // Node
 import { Route } from "react-router-dom"
 // Pages
-import CompaniesPage from '../pages/CompaniesPage'
+import CompaniesPage from '../../pages/CompaniesPage'
 
 /*
  * Блок "Контент"
