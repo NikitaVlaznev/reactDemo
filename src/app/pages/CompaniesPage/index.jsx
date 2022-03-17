@@ -10,7 +10,7 @@ import SearchIcon from '@mui/icons-material/Search'
 // Components
 import InfoCard from "../../components/InfoCard"
 // Redux
-import { getCompanies } from '../../../redux/reducers/companies-reducer';
+import { getCompanies, setQueryFilter } from '../../../redux/reducers/companies-reducer';
 
 /*
  * Страница "Компании"
@@ -19,13 +19,22 @@ import { getCompanies } from '../../../redux/reducers/companies-reducer';
 // Компонент страницы
 const CompaniesPage = (props) => {
     // Преобразование пропсов в локальные константы
-    const { companies, loadingCompaniesComplete, getCompanies } = props;    
+    const { 
+        companies, queryFilter, categoriesFilter, loadingCompaniesComplete, 
+        getCompanies, setQueryFilter, 
+    } = props
     
     // Хук эффекта
-    useEffect(() => {        
+    useEffect(() => {
         // Получить список компаний
-        getCompanies();        
-    }, [getCompanies])
+        getCompanies(queryFilter, categoriesFilter)
+    }, [getCompanies, queryFilter, categoriesFilter])
+    
+    // Событие изменения поискового поля ввода
+    const handleChange = (event) => {
+        // Установить строку запроса в фильтре компаний    
+        setQueryFilter(event.target.value)     
+    }
     
     return (
         <>
@@ -39,6 +48,7 @@ const CompaniesPage = (props) => {
                             <SearchIcon/>
                         </InputAdornment>,
                 }}
+                onChange={handleChange}
             />
             { loadingCompaniesComplete
                 ? <>
@@ -61,10 +71,12 @@ const CompaniesPage = (props) => {
 // Маппинг стейта в пропсы страницы
 const mapStateToProps = (state) => (    
     {
-        companies: state.companiesStore?.companies,        
+        companies: state.companiesStore?.companies,
+        queryFilter: state.companiesStore.filter?.query,
+        categoriesFilter: state.companiesStore.filter?.categories,
         loadingCompaniesComplete: state.loadStore.loadingComplete?.companies,
     }
 )
 
 // Экспорт страницы
-export default connect(mapStateToProps, { getCompanies })(CompaniesPage);
+export default connect(mapStateToProps, { getCompanies, setQueryFilter })(CompaniesPage);

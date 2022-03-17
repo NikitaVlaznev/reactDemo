@@ -13,22 +13,23 @@ import Checkbox from '@mui/material/Checkbox'
  */
 
 // Экспорт компонента
-export const CheckboxList = ({ label, items }) => {
+export const CheckboxList = ({ label, items, onCheckboxClick }) => {
     // Установка маркера состояния чекбокса
-    const [checked, setChecked] = React.useState([0]);
+    const [checked, setChecked] = React.useState([]);
 
     // Метод обработки изменения состояния чекбокса
     const handleToggle = (value) => () => {
-        const currentIndex = checked.indexOf(value);
-        const newChecked = [...checked];
+        const currentIndex = checked.indexOf(value)
+        const newChecked = [...checked]
 
         if (currentIndex === -1) {
-            newChecked.push(value);
+            newChecked.push(value)
         } else {
-            newChecked.splice(currentIndex, 1);
+            newChecked.splice(currentIndex, 1)
         }
 
-        setChecked(newChecked);
+        setChecked(newChecked)
+        onCheckboxClick && onCheckboxClick(newChecked)
     }
 
     return (
@@ -36,25 +37,25 @@ export const CheckboxList = ({ label, items }) => {
               subheader={ <ListSubheader>{label}</ListSubheader> }
         >
             {
-                items.map((data, index) => {
-                    const labelId = `checkbox-list-label-${index}`;
+                items.map((data) => {
+                    const labelId = `checkbox-list-label-${data?.id}`
                     
                     return (
                         <ListItem
-                            key={index}           
+                            key={data?.id}           
                             disablePadding
                         >
-                            <ListItemButton role={undefined} onClick={handleToggle(index)} dense>
+                            <ListItemButton role={undefined} onClick={handleToggle(data?.id)} dense>
                                 <ListItemIcon sx={{ minWidth: { xs: 'unset', sm: '42px' } }} >
                                     <Checkbox
                                         edge="start"
-                                        checked={checked.indexOf(index) !== -1}
+                                        checked={checked.indexOf(data?.id) !== -1}
                                         tabIndex={-1}
                                         disableRipple
                                         inputProps={{ 'aria-labelledby': labelId }}
                                     />
                                 </ListItemIcon>
-                                <ListItemText id={labelId} primary={data} />
+                                <ListItemText id={labelId} primary={data?.title} />
                             </ListItemButton>
                         </ListItem>
                     );
@@ -65,7 +66,7 @@ export const CheckboxList = ({ label, items }) => {
 }
 
 // Свойства по умолчанию
-CheckboxList.defaultProps = { };
+CheckboxList.defaultProps = { }
 
 // Экспорт компонента
-export default CheckboxList;
+export default CheckboxList

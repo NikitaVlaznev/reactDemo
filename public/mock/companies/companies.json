@@ -5,6 +5,7 @@
             "name": "Строй Холдинг",
             "logo": "https://picsum.photos/250/150?id=1",
             "speciality": "земляные работы",
+            "specialityId": 1,
             "city": "Санкт-Петербург"            
         },
         {
@@ -12,6 +13,7 @@
             "name": "Монолит Строй",
             "logo": "https://picsum.photos/250/150?id=2",
             "speciality": "жилищное строительство",
+            "specialityId": 2,
             "city": "Красноярск"            
         },
         {
@@ -19,6 +21,7 @@
             "name": "Спецстрой",
             "logo": "https://picsum.photos/250/150?id=3",
             "speciality": "электрика",
+            "specialityId": 3,
             "city": "Волгоград"            
         },
         {
@@ -26,6 +29,7 @@
             "name": "Новый Город",
             "logo": "https://picsum.photos/250/150?id=4",
             "speciality": "монтажные работы",
+            "specialityId": 4,
             "city": "Санкт-Петербург"            
         },
         {
@@ -33,6 +37,7 @@
             "name": "Реставрация",
             "logo": "https://picsum.photos/250/150?id=5",
             "speciality": "сантехника",
+            "specialityId": 5,
             "city": "Москва"            
         },
         {
@@ -40,6 +45,7 @@
             "name": "Урбан",
             "logo": "https://picsum.photos/250/150?id=6",
             "speciality": "монтажные работы",
+            "specialityId": 4,
             "city": "Владивосток"            
         },
         {
@@ -47,6 +53,7 @@
             "name": "Комфорт-сити",
             "logo": "https://picsum.photos/250/150?id=7",
             "speciality": "земляные работы",
+            "specialityId": 1,
             "city": "Москва"            
         },
         {
@@ -54,6 +61,7 @@
             "name": "Билдинг инкорпроейтед",
             "logo": "https://picsum.photos/250/150?id=8",
             "speciality": "земляные работы",
+            "specialityId": 1,
             "city": "Красноярск"            
         },
         {
@@ -61,6 +69,7 @@
             "name": "Вымпелстрой",
             "logo": "https://picsum.photos/250/150?id=9",
             "speciality": "монтажные работы",
+            "specialityId": 4,
             "city": "Волгоград"            
         },
         {
@@ -68,6 +77,7 @@
             "name": "Еврогарант",
             "logo": "https://picsum.photos/250/150?id=10",
             "speciality": "жилищное строительство",
+            "specialityId": 2,
             "city": "Санкт-Петербург"            
         },
         {
@@ -75,6 +85,7 @@
             "name": "Техно-прогресс",
             "logo": "https://picsum.photos/250/150?id=11",
             "speciality": "жилищное строительство",
+            "specialityId": 2,
             "city": "Москва"            
         },
         {
@@ -82,6 +93,7 @@
             "name": "Стройка века",
             "logo": "https://picsum.photos/250/150?id=12",
             "speciality": "электрика",
+            "specialityId": 3,
             "city": "Санкт-Петербург"            
         },
         {
@@ -89,6 +101,7 @@
             "name": "Инжиниринг Строй",
             "logo": "https://picsum.photos/250/150?id=13",
             "speciality": "земляные работы",
+            "specialityId": 1,
             "city": "Санкт-Петербург"            
         },
         {
@@ -96,6 +109,7 @@
             "name": "Вымпел",
             "logo": "https://picsum.photos/250/150?id=14",
             "speciality": "электрика",
+            "specialityId": 3,
             "city": "Красноярск"            
         },
         {
@@ -103,6 +117,7 @@
             "name": "Домострой",
             "logo": "https://picsum.photos/250/150?id=15",
             "speciality": "монтажные работы",
+            "specialityId": 4,
             "city": "Москва"            
         },
         {
@@ -110,6 +125,7 @@
             "name": "Брикс",
             "logo": "https://picsum.photos/250/150?id=16",
             "speciality": "земляные работы",
+            "specialityId": 1,
             "city": "Волгоград"            
         },
         {
@@ -117,6 +133,7 @@
             "name": "Малые кварталы",
             "logo": "https://picsum.photos/250/150?id=17",
             "speciality": "земляные работы",
+            "specialityId": 1,
             "city": "Санкт-Петербург"            
         },
         {
@@ -124,6 +141,7 @@
             "name": "Титан Строительство",
             "logo": "https://picsum.photos/250/150?id=18",
             "speciality": "земляные работы",
+            "specialityId": 1,
             "city": "Владивосток"            
         },
         {
@@ -131,6 +149,7 @@
             "name": "Ваш микрорайон",
             "logo": "https://picsum.photos/250/150?id=19",
             "speciality": "жилищное строительство",
+            "specialityId": 2,
             "city": "Санкт-Петербург"            
         },
         {
@@ -138,6 +157,7 @@
             "name": "Айсберг",
             "logo": "https://picsum.photos/250/150?id=20",
             "speciality": "земляные работы",
+            "specialityId": 1,
             "city": "Москва"            
         },
         {
@@ -145,6 +165,7 @@
             "name": "Строй Инвест",
             "logo": "https://picsum.photos/250/150?id=21",
             "speciality": "сантехника",
+            "specialityId": 5,
             "city": "Владивосток"            
         },
         {
@@ -152,6 +173,7 @@
             "name": "Сибиряк",
             "logo": "https://picsum.photos/250/150?id=22",
             "speciality": "земляные работы",
+            "specialityId": 1,
             "city": "Красноярск"            
         },
         {
@@ -159,6 +181,7 @@
             "name": "Современные решения",
             "logo": "https://picsum.photos/250/150?id=23",
             "speciality": "сантехника",
+            "specialityId": 5,
             "city": "Санкт-Петербург"            
         },
         {
@@ -166,6 +189,7 @@
             "name": "Котлован",
             "logo": "https://picsum.photos/250/150?id=24",
             "speciality": "земляные работы",
+            "specialityId": 1,
             "city": "Красноярск"            
         },
         {
@@ -173,6 +197,7 @@
             "name": "Пром Строй",
             "logo": "https://picsum.photos/250/150?id=25",
             "speciality": "жилищное строительство",
+            "specialityId": 2,
             "city": "Волгоград"            
         },
         {
@@ -180,6 +205,7 @@
             "name": "Гарантия",
             "logo": "https://picsum.photos/250/150?id=26",
             "speciality": "электрика",
+            "specialityId": 3,
             "city": "Санкт-Петербург"            
         },
         {
@@ -187,6 +213,7 @@
             "name": "Нестеров и КО",
             "logo": "https://picsum.photos/250/150?id=27",
             "speciality": "жилищное строительство",
+            "specialityId": 2,
             "city": "Москва"            
         },
         {
@@ -194,6 +221,7 @@
             "name": "Развитие",
             "logo": "https://picsum.photos/250/150?id=28",
             "speciality": "электрика",
+            "specialityId": 3,
             "city": "Санкт-Петербург"            
         }        
     ],
