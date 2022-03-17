@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 //Node
+import _ from 'lodash-contrib'
 import { connect } from 'react-redux'
 import { Box, CircularProgress, Grid, InputAdornment, TextField, Typography } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
@@ -26,10 +27,16 @@ const CompaniesPage = (props) => {
         getCompanies(queryFilter, categoriesFilter)
     }, [getCompanies, queryFilter, categoriesFilter])
     
+    // Событие с дебаунсом
+    const debouncedEvent = _.debounce((query) => {
+        // Установить строку запроса в фильтре компаний    
+        setQueryFilter(query)
+    }, 750)
+    
     // Событие изменения поискового поля ввода
     const handleChange = (event) => {
-        // Установить строку запроса в фильтре компаний    
-        setQueryFilter(event.target.value)     
+        // Вызов события с дебаунсом    
+        debouncedEvent(event.target.value)     
     }
     
     return (
