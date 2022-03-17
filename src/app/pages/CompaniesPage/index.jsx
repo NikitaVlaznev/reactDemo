@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
 //Node
 import { connect } from 'react-redux'
-import { Grid } from '@mui/material'
-import Box from '@mui/material/Box'
-import CircularProgress from '@mui/material/CircularProgress';
-import InputAdornment from '@mui/material/InputAdornment'
-import TextField from '@mui/material/TextField'
+import { Box, CircularProgress, Grid, InputAdornment, TextField, Typography } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 // Components
 import InfoCard from "../../components/InfoCard"
@@ -53,9 +49,20 @@ const CompaniesPage = (props) => {
             { loadingCompaniesComplete
                 ? <>
                     <Grid container spacing={3}>
-                        {companies.map((data, index) => 
-                            <InfoCard data={data} key={`companiesInfoCard_${index}`} />
-                        )}
+                        {companies.length
+                            ? companies.map((data, index) => 
+                                <InfoCard data={data} key={`companiesInfoCard_${index}`} />
+                            )
+                            : <Grid item xs={12}>
+                                <Typography
+                                    gutterBottom
+                                    variant="h6"
+                                    sx={{ color: 'text.disabled', display: 'block' }}
+                                >
+                                    По Вашему запросу ничего не найдено...
+                                </Typography>
+                            </Grid>
+                        }
                     </Grid>
                 </>
                 : <Box

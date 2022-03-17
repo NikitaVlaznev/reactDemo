@@ -7,7 +7,7 @@ export const companiesFilter = {
         // Проход по исходному массиву компаний
         companies.forEach((company, index) => {            
             if(// Если название компании не соответствует поисковой строке
-               !company.name.toLowerCase().includes(query) ||
+               !company.name.toLowerCase().includes(query.toLowerCase()) ||
                // или массив категорий не пуст и он не содержит айди категории компании
                (categories.length && !categories.includes(company.specialityId))
             ) {
