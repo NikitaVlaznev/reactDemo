@@ -56,7 +56,7 @@ const CompaniesPage = (props) => {
             { loadingCompaniesComplete
                 ? <>
                     <Grid container spacing={3}>
-                        {companies.length
+                        {companies && companies.length
                             ? companies.map((data, index) => 
                                 <InfoCard data={data} key={`companiesInfoCard_${index}`} />
                             )

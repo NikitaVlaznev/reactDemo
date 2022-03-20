@@ -33,34 +33,35 @@ export const CheckboxList = ({ label, items, onCheckboxClick }) => {
     }
 
     return (
-        <List sx={{ width: '100%', bgcolor: 'background.paper' }}
-              subheader={ <ListSubheader>{label}</ListSubheader> }
-        >
-            {
-                items.map((data) => {
-                    const labelId = `checkbox-list-label-${data?.id}`
-                    
-                    return (
-                        <ListItem
-                            key={data?.id}           
-                            disablePadding
-                        >
-                            <ListItemButton role={undefined} onClick={handleToggle(data?.id)} dense>
-                                <ListItemIcon sx={{ minWidth: { xs: 'unset', sm: '42px' } }} >
-                                    <Checkbox
-                                        edge="start"
-                                        checked={checked.indexOf(data?.id) !== -1}
-                                        tabIndex={-1}
-                                        disableRipple
-                                        inputProps={{ 'aria-labelledby': labelId }}
-                                    />
-                                </ListItemIcon>
-                                <ListItemText id={labelId} primary={data?.title} />
-                            </ListItemButton>
-                        </ListItem>
-                    );
-                })
-            }
+        <List sx={{ width: '100%', bgcolor: 'background.paper' }} >
+            <>
+                { label && <ListSubheader>{label}</ListSubheader> }
+                {
+                    items.map((data) => {
+                        const labelId = `checkbox-list-label-${data?.id}`
+
+                        return (
+                            <ListItem
+                                key={data?.id}           
+                                disablePadding
+                            >
+                                <ListItemButton role={undefined} onClick={handleToggle(data?.id)} dense>
+                                    <ListItemIcon sx={{ minWidth: { xs: 'unset', sm: '42px' } }} >
+                                        <Checkbox
+                                            edge="start"
+                                            checked={checked.indexOf(data?.id) !== -1}
+                                            tabIndex={-1}
+                                            disableRipple
+                                            inputProps={{ 'aria-labelledby': labelId }}
+                                        />
+                                    </ListItemIcon>
+                                    <ListItemText id={labelId} primary={data?.title} />
+                                </ListItemButton>
+                            </ListItem>
+                        );
+                    })
+                }
+            </>
         </List>
     )
 }
