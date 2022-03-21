@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 //Node
 import _ from 'lodash-contrib'
 import { connect } from 'react-redux'
-import { Box, CircularProgress, Grid, InputAdornment, TextField, Typography } from '@mui/material'
+import { Grid, InputAdornment, TextField, Typography } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 // Components
 import InfoCard from "../../components/InfoCard"
@@ -17,7 +17,7 @@ import { getCompanies, setQueryFilter } from '../../../redux/reducers/companies-
 const CompaniesPage = (props) => {
     // Преобразование пропсов в локальные константы
     const { 
-        companies, queryFilter, categoriesFilter, loadingCompaniesComplete, 
+        companies, queryFilter, categoriesFilter, 
         getCompanies, setQueryFilter, 
     } = props
     
@@ -31,7 +31,7 @@ const CompaniesPage = (props) => {
     const debouncedEvent = _.debounce((query) => {
         // Установить строку запроса в фильтре компаний    
         setQueryFilter(query)
-    }, 750)
+    }, 300)
     
     // Событие изменения поискового поля ввода
     const handleChange = (event) => {
@@ -52,32 +52,23 @@ const CompaniesPage = (props) => {
                         </InputAdornment>,
                 }}
                 onChange={handleChange}
-            />
-            { loadingCompaniesComplete
-                ? <>
-                    <Grid container spacing={3}>
-                        {companies && companies.length
-                            ? companies.map((data, index) => 
-                                <InfoCard data={data} key={`companiesInfoCard_${index}`} />
-                            )
-                            : <Grid item xs={12}>
-                                <Typography
-                                    gutterBottom
-                                    variant="h6"
-                                    sx={{ color: 'text.disabled', display: 'block' }}
-                                >
-                                    По Вашему запросу ничего не найдено...
-                                </Typography>
-                            </Grid>
-                        }
+            />            
+            <Grid container spacing={3}>
+                {companies && companies.length
+                    ? companies.map((data, index) => 
+                        <InfoCard data={data} key={`companiesInfoCard_${index}`} />
+                    )
+                    : <Grid item xs={12}>
+                        <Typography
+                            gutterBottom
+                            variant="h6"
+                            sx={{ color: 'text.disabled', display: 'block' }}
+                        >
+                            По Вашему запросу ничего не найдено...
+                        </Typography>
                     </Grid>
-                </>
-                : <Box
-                    sx={{ color: 'red', mt: 2, mx: 'auto', width: 60 }}                                      
-                >
-                    <CircularProgress color="inherit" />
-                </Box>
-            }
+                }
+            </Grid>
         </>
     )    
 }
@@ -87,8 +78,7 @@ const mapStateToProps = (state) => (
     {
         companies: state.companiesStore?.companies,
         queryFilter: state.companiesStore.filter?.query,
-        categoriesFilter: state.companiesStore.filter?.categories,
-        loadingCompaniesComplete: state.loadStore.loadingComplete?.companies,
+        categoriesFilter: state.companiesStore.filter?.categories,        
     }
 )
 
